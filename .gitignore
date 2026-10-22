@@ -1,0 +1,19 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Dependencias y artefactos
+node_modules/
+*.log
+*.tmp
+
+# Archivos locales de trabajo
+cc_raw.txt
+*.pdf
+%TEMP%/

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Página no encontrada — Common Criteria</title>
+  <meta name="description" content="La página solicitada no forma parte del explorador de Common Criteria.">
+  <meta name="theme-color" content="#171814">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <style>
+    @font-face {
+      font-family: 'Fraunces';
+      src: url('assets/fonts/fraunces-latin.woff2') format('woff2');
+      font-weight: 100 900;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Manrope';
+      src: url('assets/fonts/manrope-latin.woff2') format('woff2');
+      font-weight: 100 900;
+      font-display: swap;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      font-family: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      color: #f3edde;
+      background: #141511;
+      background-image:
+        radial-gradient(ellipse 70% 60% at 80% 0%, rgba(180, 67, 44, 0.22), transparent 65%),
+        linear-gradient(rgba(243, 237, 222, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(243, 237, 222, 0.045) 1px, transparent 1px);
+      background-size: auto, 64px 64px, 64px 64px;
+    }
+
+    .card {
+      position: relative;
+      width: min(100%, 660px);
+      padding: clamp(30px, 6vw, 58px);
+      overflow: hidden;
+      background: #1b1c17;
+      border: 1px solid #3b3d33;
+      border-radius: 12px;
+      box-shadow: 0 30px 80px -40px rgba(0, 0, 0, 0.9);
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto;
+      height: 4px;
+      background: #b4432c;
+    }
+
+    .mark {
+      display: inline-grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 28px;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 17px;
+      color: #f3edde;
+      background: #b4432c;
+      border-radius: 3px;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #a29a8a;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(34px, 6vw, 54px);
+      font-weight: 500;
+      line-height: 1.04;
+      letter-spacing: -0.035em;
+    }
+
+    p {
+      max-width: 46ch;
+      margin: 16px 0 0;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #b8b1a1;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 20px;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      border: 1px solid #55584a;
+      border-radius: 999px;
+      transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+    }
+
+    a.primary {
+      color: #171814;
+      background: #f3edde;
+      border-color: #f3edde;
+    }
+
+    a.primary:hover {
+      color: #fff;
+      background: #b4432c;
+      border-color: #b4432c;
+    }
+
+    a.secondary {
+      color: #d9d2c2;
+      background: transparent;
+    }
+
+    a.secondary:hover {
+      background: #262720;
+      border-color: #777b66;
+    }
+
+    .number {
+      margin-top: 34px;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(100px, 24vw, 190px);
+      font-weight: 500;
+      line-height: 0.7;
+      letter-spacing: -0.07em;
+      color: transparent;
+      -webkit-text-stroke: 1px #3b3d33;
+      user-select: none;
+    }
+
+    .footer {
+      margin-top: 26px;
+      font-size: 10.5px;
+      color: #807a6d;
+    }
+
+    @media print {
+      body { background: #fff; color: #111; }
+      .card { border: 0; box-shadow: none; }
+      .actions { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <span class="mark" aria-hidden="true">CC</span>
+    <p class="eyebrow">Error 404</p>
+    <h1>Esta página no existe.</h1>
+    <p>Puede que el enlace esté mal escrito. Vuelve al inicio o abre el catálogo para continuar buscando.</p>
+    <div class="actions">
+      <a class="primary" id="home-link" href="./">Volver al inicio</a>
+      <a class="secondary" id="catalog-link" href="./">Abrir el catálogo</a>
+    </div>
+    <div class="number" aria-hidden="true">404</div>
+    <p class="footer">© 2026 Fernando Huilca</p>
+  </main>
+
+  <script>
+    (function () {
+      var segments = window.location.pathname.split('/').filter(Boolean);
+      var base = '/';
+
+      if (/\.github\.io$/i.test(window.location.hostname) && segments.length) {
+        base = '/' + segments[0] + '/';
+      } else if (window.location.protocol === 'file:') {
+        base = './';
+      }
+
+      document.getElementById('home-link').href = base + '#/';
+      document.getElementById('catalog-link').href = base + '#/catalogo';
+    })();
+  </script>
+</body>
+</html>
