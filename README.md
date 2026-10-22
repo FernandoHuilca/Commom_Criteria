@@ -2,7 +2,7 @@
 
 >[!IMPORTANT]
 > **¡Accede al proyecto!!**  
-[👉🏻**Visita la página aquí**👈🏻](https://github.com/FernandoHuilca/Commom_Criteria/)
+>[👉🏻**Visita la página aquí**👈🏻](https://fernandohuilca.github.io/Commom_Criteria/)
 >
 
 Aplicación web estática para buscar y consultar los componentes funcionales de **Common Criteria (CC:2022, Parte 2, Revisión 1)** en español.
